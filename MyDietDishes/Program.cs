@@ -2,15 +2,15 @@
 using MyDietDishes.Entities;
 using MyDietDishes.Data;
 
-var dishRepository = new SqlRepository<Meal>(new MotoAppDbContext());
+var dishRepository = new SqlRepository<Meal>(new DishesAppDbContext());
 AddEmployees(dishRepository);
 WriteAllConsole(dishRepository);
 
 static void AddEmployees(IRepository<Meal> employeeRepository)
 {
-    employeeRepository.Add(new Meal { MealName = "Jajecznica z cebulką i suszonymi pomidorami podana z pieczywem i sałatką z papryki i ogórka" });
-    employeeRepository.Add(new Meal { MealName = "Pieczone trybowane udko z kurczaka w sosie meksykańskim z ryżem brązowym" });
-    employeeRepository.Add(new Meal { MealName = "Wegańskie pulpecki na puree z batata i pietruszki oraz warzywa na parze" });
+    employeeRepository.Add(new Meal { MealName = "Jajecznica z cebulką i suszonymi pomidorami podana z pieczywem i sałatką z papryki i ogórka", Time = "Śniadanie", Rating = 4 } );
+    employeeRepository.Add(new Meal { MealName = "Pieczone trybowane udko z kurczaka w sosie meksykańskim z ryżem brązowym", Time = "Obiad", Rating = 4 });
+    employeeRepository.Add(new Meal { MealName = "Wegańskie pulpecki na puree z batata i pietruszki oraz warzywa na parze", Time = "Kolacja", Rating = 3 });
     employeeRepository.Save();
 }
 

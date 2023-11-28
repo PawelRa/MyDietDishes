@@ -3,7 +3,7 @@ using MyDietDishes.Entities;
 
 namespace MyDietDishes.Data
 {
-    public class MotoAppDbContext : DbContext
+    public class DishesAppDbContext : DbContext
     {
         public DbSet<Meal> Meals => Set<Meal>();
 
